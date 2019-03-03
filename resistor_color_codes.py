@@ -1,5 +1,5 @@
 def encode_resistor_colors(ohms_string):
-    color_codes = {
+    color_codes = { #color codes hash
     '0': 'black',
     '1': 'brown',
     '2': 'red',
@@ -12,20 +12,18 @@ def encode_resistor_colors(ohms_string):
     '9': 'white'
     }
     string = str.split(ohms_string) # split string
-    convert = string[0]
-    if 'k' in convert:
+    convert = string[0] # convert is the first value of the string
+    if 'k' in convert: # replace k by 000
         replaced_one = [t.replace('k', '000') for t in convert]
          # [1,000]
-    elif 'M' in convert:
+    elif 'M' in convert: # replace M by 000000
         replaced_one= [m.replace('M','000000') for m in convert]
     else:
         replaced_one = convert
     arr = list(replaced_one)
     print(arr)
     if arr[1]=='.' and arr[-1] == '000' in replaced_one:
-        print('tea')
         replaced_one.remove('.')
-        print(replaced_one)
         arr = replaced_one
         values = 2
     elif '.' in replaced_one:
@@ -34,7 +32,6 @@ def encode_resistor_colors(ohms_string):
         values = 5
         arr = list(replaced) #split the new arr
     elif '000'in arr and arr[0] != '1':
-        print(arr,'s')
         if len(arr) == 4:
             values = len(arr)
         else:
@@ -43,12 +40,9 @@ def encode_resistor_colors(ohms_string):
         # arr = list(map(str, str(arr[0])))
     elif arr[0] == '1' and arr[-1] =='000' in arr:
         values = len(arr)
-        print('1k')
         arr[0] = arr[0] +'0'
-        print(values,'ll')
         arr = list(map(str, str(arr[0])))
     elif '0000' in arr and len(arr) ==2:
-        print('1...')
         arr.remove('.')
         arr = arr[:-1]
         values = len(arr)
@@ -77,7 +71,6 @@ def encode_resistor_colors(ohms_string):
         arr = arr[:-1]
         if len(arr) > 2:
             arr = arr[:-1]
-    print(arr,'lllllll')
     for key, value in color_codes.items():
         for x in arr:
             ans.append(color_codes[x])
