@@ -10,4 +10,4 @@ def increment_string(strng):
     if num == "":
         num = "0"
 
-    return alpha + str(int(num) + 1).zfill(len(num)) #zfill for the 0s
+    return alpha + str(int(num) + 1).zfill(len(num)) #.zfill for the 0s
