@@ -5,10 +5,10 @@
 # The second digit of the key (e.g. 2) is the movement for the second line.
 # The third digit of the key (e.g. 7) is the movement for the third line.
 #lowecase and uppercase keys
-keyboard = [
-            ("qwertyuiop"), ("QWERTYUIOP"), ("asdfghjkl"),
-            ("ASDFGHJKL"), ("zxcvbnm,."), ("ZXCVBNM<>")
-]
+keyboard = (
+            ("qwertyuiop",0), ("QWERTYUIOP",0), ("asdfghjkl",1),
+            ("ASDFGHJKL",1), ("zxcvbnm,.",2), ("ZXCVBNM<>",2)
+)
 #joining all the keys together in one string
 total_keys = "".join(keys[0] for keys in keyboard)
 #function for encrypting

@@ -20,7 +20,7 @@ def replace(strng):
                 x = value
                 ans.append(value)
         return ans
-strng = input('input string ')
+strng = input('input string: ')
 print(replace(strng))
 #______________________________________________________
 def reverse(user_string): #cat --> tac
@@ -31,5 +31,5 @@ def reverse(user_string): #cat --> tac
         print(i)
         output += user_string[i-1]
     return output
-user_string = input('input string to reverse ')
+user_string = input('input string to reverse: ')
 print(reverse(user_string))
